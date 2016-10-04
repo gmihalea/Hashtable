@@ -9,7 +9,6 @@ void addWordToList(struct Node **headList, char *new_word)
 	struct Node *p;
 
 	if(*headList == NULL){
-
 		*headList = (struct Node*)malloc(sizeof(struct Node));
 		DIE(*headList == NULL, "Nu s-a putut aloca memorie !\n");
 
@@ -20,7 +19,6 @@ void addWordToList(struct Node **headList, char *new_word)
 		(*headList)->next = NULL;
 	}
 	else{
-
 		for(p = *headList;;p = p->next){
 			/*
 			Daca cuvantul exista deja in lista, va fi ignorat.
@@ -29,7 +27,6 @@ void addWordToList(struct Node **headList, char *new_word)
 				break;
 
 			if(p->next == NULL){
-
 				p->next = (struct Node*)malloc(
 					sizeof(struct Node));
 				DIE(p->next == NULL, "Eroare alocare"
@@ -53,7 +50,6 @@ void addWordToList(struct Node **headList, char *new_word)
 */
 int searchWordInList(struct Node **headList, char *wordToFind)
 {
-
 	struct Node *p;
 	if(*headList == NULL){
 		return FALSE;
