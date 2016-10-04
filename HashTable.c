@@ -173,7 +173,6 @@ void printBucket(struct HashTable hashtable, int index, char *fileName)
 	altfel se va afisa in fisier.
 	*/
 	if (fileName == NULL) {
-	
 		while (bucket != NULL) {
 			printf("%s ", bucket->value);
 			bucket = bucket->next;
@@ -185,9 +184,7 @@ void printBucket(struct HashTable hashtable, int index, char *fileName)
 		*/
 		if(newLine == 1)
 			printf("\n");
-
 	} else {
-
 		file = fopen(fileName, "a");
 		DIE(file == NULL, "Nu s-a putut deschide fisierul !\n");
 
@@ -231,11 +228,9 @@ void applyOperation(struct HashTable* hashtable, char *line) {
 
 	item = strtok(line, " \n");
 	while(item != NULL) {
-
 		noOfParameters++;
 
 		if (operation == OP_NONE) {
-
 			if (strcmp(item, "add") == 0)
 				operation = OP_ADD;
 			if (strcmp(item, "remove") == 0)
@@ -250,7 +245,6 @@ void applyOperation(struct HashTable* hashtable, char *line) {
 				operation = OP_RESIZE;
 			if (strcmp(item, "clear") == 0)
 				operation = OP_CLEAR;
-
 		} else 
 			/*
 			nextWord va retine ce-a de-a doua parte a comenzii.
@@ -262,7 +256,6 @@ void applyOperation(struct HashTable* hashtable, char *line) {
 		In cazul in care comanda va avea 3 parametri, ultimul va
 		fi retinut in variabila item.
 		*/
-
 		item = strtok(NULL, " \n");
 
 		if (noOfParameters == MAX_NO_OF_PARAMS)
