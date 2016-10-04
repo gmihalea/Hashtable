@@ -85,7 +85,6 @@ void findWord(struct HashTable hashTable, char *word, char *fileName)
 	se va afisa in fisier.
 	*/
 	if(fileName == NULL){
-
 		if(found == 1)
 			printf("True\n");
 		else
@@ -216,8 +215,8 @@ void processLine(struct HashTable *hashTable, FILE *file)
 * in functie de rezultat aplica o anumita functie deja existenta, 
 * de exemplu ADD, REMOVE, etc.
 */
-void applyOperation(struct HashTable* hashtable, char *line) {
-
+void applyOperation(struct HashTable* hashtable, char *line) 
+{
 	char *item = NULL;
 	char *nextWord = NULL;
 	char behavior;
